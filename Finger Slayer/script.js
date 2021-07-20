@@ -10,6 +10,7 @@ can.style.border = "2px solid black";
 var gameArea = document.getElementById("game");
 
 var MODE = "medium";
+var URL_ = "https://raw.githubusercontent.com/God-Coding/FingerSlayer/main/Finger%20Slayer/";
 
 var bladeImg, woodBg, bloodPng, blood2Png, rus, drop, hurts, wow, scaryBg, allAudio, allImages, totalImages, totalAudio, iLoaded, aLoaded, loadedImages, loadedAudio;
 
@@ -43,7 +44,6 @@ class UI{
         this.div.id = "divDiv";
         this.div.style.height = h + "px";
         this.div.style.position = "absolute";
-        this.div.style.backgroundColor = "red";
         gameArea.appendChild(this.div);
     }
 
@@ -223,24 +223,27 @@ pb.value = 0;
 preloadUi.appedElem(pb);
 
 dab.onclick = () =>{
+    dab.innerHTML = "Downloading assets...";
+    dab.disabled = true;
+
     bladeImg = new Image();
-    bladeImg.src = "blade.png";
+    bladeImg.src = URL_ +  "blade.png";
 
     woodBg = new Image();
-    woodBg.src = "bg2.jpg";
+    woodBg.src = URL_ + "bg2.jpg";
 
     bloodPng = new Image();
-    bloodPng.src = "blood.png";
+    bloodPng.src = URL_ + "blood.png";
 
     blood2Png = new Image();
-    blood2Png.src = "blood-1.png";
+    blood2Png.src = URL_ +  "blood-1.png";
 
-    rus = new Audio("scared.mp3");
+    rus = new Audio(URL_ + "scared.mp3");
     drop = new Audio("drop.wav");
 
-    scaryBg = new Audio("scary.mp3");
-    hurts = [new Audio("hurt.wav"), new Audio("hurt1.wav"), new Audio("hurt2.wav")];
-    wow = new Audio("clap.wav");
+    scaryBg = new Audio(URL_ + "scary.mp3");
+    hurts = [new Audio(URL_ + "hurt.wav"), new Audio(URL_ + "hurt1.wav"), new Audio(URL_ + "hurt2.wav")];
+    wow = new Audio(URL_ + "clap.wav");
 
     allImages = [bladeImg, woodBg, bloodPng, blood2Png];
     allAudio = [rus, drop, hurts[0], hurts[1], hurts[2], wow, scaryBg];
