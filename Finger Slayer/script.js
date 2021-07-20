@@ -574,7 +574,6 @@ class GameBox{
         }
         this.blade.ang += this.blade.bladeSpeed;
         if(this.fingerHolder.activated){
-            pauseBtn.hide();
             this.impressive = true;
             if(this.blade.y == -this.blade.w/4){
                 states.push(new State("start"));
@@ -591,7 +590,6 @@ class GameBox{
                 this.changeState = true;
             }
         }else{
-            if(men.div.style.display == "none") pauseBtn.show()
             if(this.blade.y + this.blade.h > this.fingerHolder.y - this.fingerHolder.r){
                 this.impressive = sin(this.impressive, ()=>{
                     wow.play();
